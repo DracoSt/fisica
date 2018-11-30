@@ -323,6 +323,7 @@ class Interface:
         def cord_y(y):
             y = cord_y(self.entrada_posicion_y0)
             return y
+        
 
         #funcion para obtener la velocidad inicial
 
