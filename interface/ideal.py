@@ -283,31 +283,70 @@ class Interface:
         pass
 
     def boton_aceleracionf(self):
-        #pop up de ingreso de datos
+        # pop up de ingreso de datos
+
+        # funcion de tiempo de impacto
+        def tiempo_impact():
+            return 0
+
+            # pop up
 
         Pop_Up = tk.Tk()
         Pop_Up.title("Aceleracion")
-        Pop_Up.minsize(400,300)
+        Pop_Up.minsize(400, 300)
 
         label = tk.Label(Pop_Up)
         label.pack()
 
-        button = tk.Button(Pop_Up, text = 'Evaluar' , width = 10, command = Pop_Up.destroy)
-        button.pack(side=tk.BOTTOM)
+        # Separador de datos
+        separador = ttk.Separator(Pop_Up, orient="horizontal")
+        separador.pack(side=tk.TOP, expand=False, fill=tk.X)
 
-        #ciclo de la ventana emergente
+        e = ttk.Entry(Pop_Up)
+        e.pack(side=tk.BOTTOM, expand=True)
+
+        button = ttk.Button(Pop_Up, text='Evaluar', width=10, command=Pop_Up.destroy)
+        button.pack(side=tk.BOTTOM, padx=5, pady=5)
+
         Pop_Up.mainloop()
 
-        #generamiento de la grafica
+        # formulas de generamiento de datos a graficar
 
 
-        #generacion del punto de posicion a medir
+        # funcion para el calculo de la coordenada horizontal
+        def cord_x(x):
+            x = cord_x(self.entrada_posicion_x0)
+            return x
+
+        # funcion para el calculo de la coordenada vertical
+
+        def cord_y(y):
+            y = cord_y(self.entrada_posicion_y0)
+            return y
+
+        #funcion para obtener la velocidad inicial
+
+        def velocidad_inicial(v0):
+            v0 = velocidad_inicial(self.velocidad_inicial)
+            return velocidad_inicial(v0)
+
+        #funcion final para determinar la aceleracion
+
+        def aceleracion(x0, y0,v0,g,angulo0,t):
+            a = aceleracion(x0 + v0*cos(angulo0)*t+","+y0 + v0*sin(angulo0)*t - (g/2)*t^2)
+
+            return a
 
 
-        #generacion del vector con origen en el punto de posicion
 
 
-        #posible desplazamiento con deslizador
+        # generamiento de la grafica
+
+        # generacion del punto de posicion a medir
+
+        # generacion del vector con origen en el punto de posicion
+
+        # posible desplazamiento con deslizador
         pass
 
     def boton_alcance_horizontalf(self):
